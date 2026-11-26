@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="wiwidpart+ — Katalog e-commerce sparepart BMW fast-moving & maintenance. Filter kode sasis E36, E46, E90, F30, G20, E39, E60, F10." />
+  <title>wiwidpart+ | Sparepart Aftermarket BMW Berkualitas</title>
+
+  <!-- Cache-Busting CSS -->
+  <link rel="stylesheet" href="css/variables.css?v=1.3.0" />
+  <link rel="stylesheet" href="css/layout.css?v=1.3.0" />
+  <link rel="stylesheet" href="css/components.css?v=1.3.0" />
+</head>
+<body>
+  <!-- Header / Navbar (Dark Navy) -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#beranda" class="brand-logo" aria-label="wiwidpart+ Home">
+        <span class="brand-text">wiwidpart<span>+</span></span>
+      </a>
+
+      <nav class="header-nav" aria-label="Navigasi Utama">
+        <a href="#beranda">Beranda</a>
+        <a href="#kategori">Kategori</a>
+        <a href="#katalog">Katalog Part</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" id="openCartBtn" class="btn-cart" aria-label="Buka Keranjang Belanja">
+          <span>Keranjang</span>
+          <span id="cartCountBadge" class="cart-badge">0</span>
+        </button>
+        <a id="headerWaLink" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-wa-nav">
+          Chat WhatsApp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section (Dark Deep Midnight Navy - Responsif Mobile & Desktop) -->
+    <section id="beranda" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="hero-kicker">AFTERMARKET BMW PARTS</p>
+          <h1 class="hero-title">
+            Sparepart<br />
+            Aftermarket<br />
+            <span>BMW Berkualitas</span>
+          </h1>
+          <p class="hero-subtitle">
+            Pilihan sparepart fast-moving &amp; maintenance untuk BMW dengan kualitas teruji dan harga yang kompetitif.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#katalog" class="btn btn-primary">Lihat Produk</a>
+            <a id="heroWaLink" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              Chat WhatsApp
+            </a>
+          </div>
+
+          <!-- 3 Trust Highlights di bawah tombol Hero -->
+          <div class="hero-trust">
+            <div class="trust-item">
+              <span class="trust-icon" aria-hidden="true">&#10003;</span>
+              <div>
+                <strong>Produk Berkualitas</strong>
+                <span>Original, OEM &amp; Aftermarket</span>
+              </div>
+            </div>
+
+            <div class="trust-item">
+              <span class="trust-icon" aria-hidden="true">&#10003;</span>
+              <div>
+                <strong>Cocok untuk BMW</strong>
+                <span>E36, E46, E90, F30, G20, F10</span>
+              </div>
+            </div>
+
+            <div class="trust-item">
+              <span class="trust-icon" aria-hidden="true">&#10003;</span>
+              <div>
+                <strong>Konsultasi</strong>
+                <span>Via WhatsApp</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-image-frame">
+            <img
+              src="assets/img/hero-bmw.webp"
+              alt="BMW Classic & Modern Performance"
+              onerror="this.onerror=null;this.src='assets/img/placeholder.svg';"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 Kategori Utama (Background Putih Bersih untuk Kontras dengan Home) -->
+    <section id="kategori" class="section section-light">
+      <div class="container">
+        <div class="section-header section-header-light">
+          <span class="section-eyebrow">SISTEM KENDARAAN</span>
+          <h2>Kategori Utama</h2>
+          <p>Pilih kategori untuk langsung menyaring sparepart fast-moving &amp; maintenance BMW.</p>
+        </div>
+
+        <div class="category-grid-2x2">
+          <button type="button" class="category-card-light" data-category="Engine & Cooling">
+            <span class="category-code-light">01 / ENGINE &amp; COOLING</span>
+            <h3>Engine &amp; Cooling</h3>
+            <p>Filter oli, water pump, thermostat, belt, gasket, dan komponen pendingin mesin.</p>
+          </button>
+
+          <button type="button" class="category-card-light" data-category="Suspension & Steering">
+            <span class="category-code-light">02 / SUSPENSION &amp; STEERING</span>
+            <h3>Suspension &amp; Steering</h3>
+            <p>Control arm, bushing, tie rod, link stabil, shock support, dan komponen kaki-kaki.</p>
+          </button>
+
+          <button type="button" class="category-card-light" data-category="Brake System">
+            <span class="category-code-light">03 / BRAKE SYSTEM</span>
+            <h3>Brake System</h3>
+            <p>Kampas rem depan/belakang, disc rotor, brake pad wear sensor, dan minyak rem.</p>
+          </button>
+
+          <button type="button" class="category-card-light" data-category="Electrical & Sensors">
+            <span class="category-code-light">04 / ELECTRICAL &amp; SENSORS</span>
+            <h3>Electrical &amp; Sensors</h3>
+            <p>Ignition coil, busi, sensor O2/camshaft/crankshaft, dan modul sensor pendukung.</p>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Katalog Produk & Filter (Dark Deep Midnight Navy) -->
+    <section id="katalog" class="section catalog-section">
+      <div class="container">
+        <div class="section-header catalog-header-row">
+          <div>
+            <h2>Katalog Sparepart</h2>
+            <p id="catalogSummary">Memuat data katalog...</p>
+          </div>
+          <button type="button" id="resetFiltersBtn" class="btn btn-ghost">Reset Filter</button>
+        </div>
+
+        <!-- Baris Kontrol Filter & Pencarian -->
+        <div class="filter-panel">
+          <div class="search-box">
+            <label for="searchInput" class="sr-only">Cari nama part, merek, kode mesin, atau OEM number</label>
+            <input
+              type="search"
+              id="searchInput"
+              placeholder="Cari nama part, merek, kode mesin (N52, B48), atau OEM..."
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="filter-selects">
+            <div class="filter-field">
+              <label for="categoryFilter">Kategori</label>
+              <select id="categoryFilter">
+                <option value="ALL">Semua Kategori</option>
+                <option value="Engine & Cooling">Engine &amp; Cooling</option>
+                <option value="Suspension & Steering">Suspension &amp; Steering</option>
+                <option value="Brake System">Brake System</option>
+                <option value="Electrical & Sensors">Electrical &amp; Sensors</option>
+              </select>
+            </div>
+
+            <div class="filter-field">
+              <label for="chassisFilter">Kode Sasis</label>
+              <select id="chassisFilter">
+                <option value="ALL">Semua Sasis</option>
+                <option value="E36">E36</option>
+                <option value="E46">E46</option>
+                <option value="E90">E90</option>
+                <option value="F30">F30</option>
+                <option value="G20">G20</option>
+                <option value="E39">E39</option>
+                <option value="E60">E60</option>
+                <option value="F10">F10</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <!-- Container Grid Produk -->
+        <div id="catalogGrid" class="product-grid" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Drawer Keranjang Belanja -->
+  <div id="cartOverlay" class="cart-overlay" hidden></div>
+  <aside id="cartDrawer" class="cart-drawer" aria-label="Keranjang Belanja" hidden>
+    <div class="cart-header">
+      <h2>Keranjang Pesanan</h2>
+      <button type="button" id="closeCartBtn" class="icon-btn" aria-label="Tutup Keranjang">&times;</button>
+    </div>
+
+    <div id="cartItemsContainer" class="cart-items">
+      <p class="cart-empty">Keranjang masih kosong.</p>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Estimasi Total</span>
+        <strong id="cartSubtotal">Rp 0</strong>
+      </div>
+      <p class="cart-note">*Harga &amp; stok mengacu pada katalog terbaru. Pengiriman &amp; ongkir dikonfirmasi admin via WA.</p>
+      <button type="button" id="checkoutWaBtn" class="btn btn-wa btn-full" disabled>
+        Order via WhatsApp
+      </button>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p><strong>wiwidpart+</strong> — BMW Fast-Moving &amp; Maintenance Parts Catalog</p>
+      <p class="footer-muted">Copyright 2026</p>
+    </div>
+  </footer>
+
+  <!-- Cache-Busting Entry Point JS -->
+  <script type="module" src="js/app.js?v=1.3.0"></script>
+</body>
+</html>
