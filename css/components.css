@@ -496,34 +496,16 @@
   border-radius: var(--radius-md);
 }
 
-/* --- Trik Zoom Gambar Simpel untuk wiwidpart+ --- */
-
-/* 1. Tentukan elemen gambar yang akan di-zoom */
-.card img {
-    /* Tambahkan transisi biar geraknya halus */
-    transition: transform 0.3s ease, z-index 0s ease;
-    cursor: zoom-in; /* Ubah kursor jadi kaca pembesar */
+/* Preview zoom saat gambar diklik/ditahan */
+main img {
+  cursor: zoom-in;
+  transition: transform 0.25s ease;
+  position: relative;
+  z-index: 2;
 }
 
-/* 2. Saat gambar diklik (:active) atau disentuh di HP */
-.card img:active {
-    /* Posisikan gambar agar menutupi layar */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    
-    /* Atur agar gambar tetap proporsional dan di tengah */
-    object-fit: contain;
-    background-color: rgba(0, 0, 0, 0.9); /* Latar belakang gelap */
-    
-    /* Pastikan berada di tumpukan paling atas */
-    z-index: 9999;
-    
-    /* Ubah kursor kembali */
-    cursor: zoom-out;
-    
-    /* Hilangkan padding/margin bawaan body saat zoom */
-    margin: 0;
+main img:active {
+  transform: scale(1.8);
+  z-index: 999;
+  cursor: zoom-out;
 }
