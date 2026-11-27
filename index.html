@@ -228,5 +228,58 @@
 
   <!-- Cache-Busting Entry Point JS -->
   <script type="module" src="js/app.js?v=1.3.0"></script>
+
+  <div id="part-popup" class="part-popup" aria-hidden="true">
+    <div class="part-popup-backdrop" data-close-popup></div>
+    <div class="part-popup-box" role="dialog" aria-modal="true">
+      <button type="button" class="part-popup-close" data-close-popup aria-label="Tutup preview">&times;</button>
+      <img id="part-popup-img" src="" alt="Preview sparepart">
+      <p id="part-popup-caption" class="part-popup-caption"></p>
+    </div>
+  </div>
+
+  <script>
+  (function () {
+    const popup = document.getElementById('part-popup');
+    const popupImg = document.getElementById('part-popup-img');
+    const popupCaption = document.getElementById('part-popup-caption');
+    if (!popup || !popupImg) return;
+
+    function openPopup(imgEl) {
+      popupImg.src = imgEl.currentSrc || imgEl.src;
+      popupImg.alt = imgEl.alt || 'Preview sparepart';
+      popupCaption.textContent = imgEl.alt || '';
+      popupCaption.style.display = imgEl.alt ? 'block' : 'none';
+      popup.classList.add('is-open');
+      popup.setAttribute('aria-hidden', 'false');
+    }
+
+    function closePopup() {
+      popup.classList.remove('is-open');
+      popup.setAttribute('aria-hidden', 'true');
+      popupImg.src = '';
+    }
+
+    document.addEventListener('click', function (e) {
+      const clickedImg = e.target.closest('main img');
+      if (clickedImg && !clickedImg.closest('#part-popup')) {
+        e.preventDefault();
+        e.stopPropagation();
+        openPopup(clickedImg);
+        return;
+      }
+
+      if (e.target.matches('[data-close-popup]')) {
+        closePopup();
+      }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && popup.classList.contains('is-open')) {
+        closePopup();
+      }
+    });
+  })();
+</script>
 </body>
 </html>
